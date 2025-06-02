@@ -59,7 +59,7 @@ body {
     padding: 20px;
     font-size: 45px;
     line-height: 1.6;
-    min-height:82.50%;
+    min-height:86%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -81,6 +81,9 @@ body {
     padding: 10px 0;
     font-size: 16px;
     font-family: "Courier New", Courier, monospace;
+    position: fixed;
+    width:100%;
+    bottom: 0;
 }
 
 .footer a {
@@ -94,7 +97,7 @@ body {
 
 #ticker-bar {
     position: fixed;
-    bottom: 0;
+    bottom: 20;
     width: 100%;
     background-color: #000033; /* Dark navy for retro feel */
     color: #fff;
