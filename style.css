@@ -1,0 +1,129 @@
+html {
+   margin: 0px;
+   height: 100%;
+   width: 100%;
+}
+
+body {
+    margin: 0;
+    background: black;
+    color: white;
+    font-family: "Courier New", Courier, monospace;
+    text-transform: uppercase;
+    height: 100%;
+}
+
+.header {
+    background: #ccccccec;
+    color: #000000;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    font-size: 30px;
+    font-family: "Workbench", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings:
+    "BLED" 15,
+    "SCAN" -20;
+}
+
+.logo {
+    font-size: 30px;
+}
+
+.datetime {
+    text-align: right;
+    font-size: 25px;
+    font-family: "Workbench", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings:
+    "BLED" 10,
+    "SCAN" -20;
+}
+
+.alert {
+    color: yellow;
+    background: red;
+    font-weight: bold;
+    animation: blink 1s infinite;
+}
+
+
+.content {
+    background: #073ad4f3;
+    color: rgba(255, 255, 255, 0.815);
+    padding: 20px;
+    font-size: 45px;
+    line-height: 1.6;
+    min-height:82.50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    white-space: pre-wrap;
+    font-family: "Workbench", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 320;
+    font-style: normal;
+    font-variation-settings:
+    "BLED" 10,
+    "SCAN" -20;
+}
+
+.footer {
+    background: #cccccc;
+    color: #000000;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 16px;
+    font-family: "Courier New", Courier, monospace;
+}
+
+.footer a {
+    color: #0000cc;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+#ticker-bar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #000033; /* Dark navy for retro feel */
+    color: #fff;
+    font-family: "Workbench", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 320;
+    font-style: normal;
+    font-variation-settings:
+    "BLED" 10,
+    "SCAN" -20;
+    font-size: 1rem;
+    padding: 5px 0;
+    overflow: hidden;
+    z-index: 1000;
+    border-top: 2px solid #00BFFF;
+}
+
+#ticker-content {
+  display: inline-block;
+  white-space: nowrap;
+  padding-left: 100%;
+  animation: ticker-scroll 120s linear infinite;
+}
+
+@keyframes ticker-scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
