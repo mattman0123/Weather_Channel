@@ -42,7 +42,6 @@ async function fetchSlides() {
         weatherSlides = formatWeather(weatherData);
         newsSlides = formatNews(newsData);
         stockSlides = formatStocks(stockData);
-
         interleaveSlides();
         currentText = allSlides[0].text;
         typeNextChar();
@@ -58,22 +57,43 @@ async function loadAQHITicker() {
     const alerts = await response.json(); 
 
     if (Array.isArray(alerts) && alerts.length > 0) {
-      const ticker = document.getElementById('ticker-content');
-      ticker.innerText = alerts.join('      ••••      ');
+        const ticker = document.getElementById('ticker-content');
+        const ticker_bar = document.getElementById('ticker-bar');
+        ticker.innerText = alerts.join('      ••••      ');      
+        ticker_bar.style.display = 'block';
+
     }else{
         const ticker = document.getElementById('ticker-bar');
-        const content = document.getElementsByClassName('content');
         ticker.style.display = 'none';
     }
   } catch (error) {
         console.error('Failed to load AQHI ticker:', error);
         const ticker = document.getElementById('ticker-bar');
-        const content = document.getElementsByClassName('content');
         ticker.style.display = 'none';
   }
 }
 
-window.addEventListener('DOMContentLoaded', loadAQHITicker);
+async function loadAlertTicker() {
+  try {
+    const response = await fetch('alerts.json');
+    const alerts = await response.json(); 
+
+    if (Array.isArray(alerts) && alerts.length > 0) {
+        const ticker = document.getElementById('alert-ticker-content');
+        const ticker_bar = document.getElementById('alert-ticker-bar');
+        ticker.innerText = alerts.join('      ••••      ');      
+        ticker_bar.style.display = 'block';
+
+    }else{
+        const ticker = document.getElementById('alert-ticker-bar');
+        ticker.style.display = 'none';
+    }
+  } catch (error) {
+        console.error('Failed to load AQHI ticker:', error);
+        const ticker = document.getElementById('alert-ticker-bar');
+        ticker.style.display = 'none';
+  }
+}
 
 function formatWeather(data) {
     if (!Array.isArray(data)) return [{ type: "weather", text: "⚠️ Weather data error." }];
@@ -99,10 +119,6 @@ function formatStocks(data) {
             text: `STOCK UPDATE: ${info.name}:${symbol} - $${info.price} ${percentStr}`
         };
     });
-}
-
-function formatAlerts(data) {
-    return data.map(text => ({ type: "alert", text }));
 }
 
 function interleaveSlides() {
@@ -132,7 +148,11 @@ function updateDateTime() {
 }
 
 
+window.addEventListener('DOMContentLoaded', loadAlertTicker);
+window.addEventListener('DOMContentLoaded', loadAQHITicker);
 setInterval(updateDateTime, 1000);
+setInterval(loadAQHITicker, 60000);
+setInterval(loadAlertTicker, 30000);
 updateDateTime();
 fetchSlides();
 setInterval(fetchSlides, 900 * 1000); // Refresh data every 5 minutes

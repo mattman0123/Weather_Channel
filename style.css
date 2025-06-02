@@ -1,7 +1,8 @@
+/* Base HTML & Body */
 html {
-   margin: 0px;
-   height: 100%;
-   width: 100%;
+    margin: 0;
+    height: 100%;
+    width: 100%;
 }
 
 body {
@@ -13,11 +14,13 @@ body {
     height: 100%;
 }
 
+/* Header */
 .header {
     background: #ccccccec;
-    color: #000000;
+    color: #000;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 10px 20px;
     font-size: 30px;
     font-family: "Workbench", sans-serif;
@@ -25,8 +28,8 @@ body {
     font-weight: 300;
     font-style: normal;
     font-variation-settings:
-    "BLED" 15,
-    "SCAN" -20;
+        "BLED" 15,
+        "SCAN" -20;
 }
 
 .logo {
@@ -41,10 +44,11 @@ body {
     font-weight: 300;
     font-style: normal;
     font-variation-settings:
-    "BLED" 10,
-    "SCAN" -20;
+        "BLED" 10,
+        "SCAN" -20;
 }
 
+/* Alerts */
 .alert {
     color: yellow;
     background: red;
@@ -52,14 +56,14 @@ body {
     animation: blink 1s infinite;
 }
 
-
+/* Main Content */
 .content {
     background: #073ad4f3;
     color: rgba(255, 255, 255, 0.815);
-    padding: 20px;
+    padding: 10px;
     font-size: 45px;
     line-height: 1.6;
-    min-height:86%;
+    min-height: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -70,20 +74,19 @@ body {
     font-weight: 320;
     font-style: normal;
     font-variation-settings:
-    "BLED" 10,
-    "SCAN" -20;
+        "BLED" 10,
+        "SCAN" -20;
 }
 
+/* Footer */
 .footer {
     background: #cccccc;
-    color: #000000;
+    color: #000;
     text-align: center;
     padding: 10px 0;
     font-size: 16px;
     font-family: "Courier New", Courier, monospace;
-    position: fixed;
-    width:100%;
-    bottom: 0;
+    width: 100%;
 }
 
 .footer a {
@@ -95,20 +98,19 @@ body {
     text-decoration: underline;
 }
 
+/* Ticker */
 #ticker-bar {
-    position: fixed;
-    bottom: 20;
     width: 100%;
-    background-color: #000033; /* Dark navy for retro feel */
+    background-color: #000033;
     color: #fff;
     font-family: "Workbench", sans-serif;
     font-optical-sizing: auto;
     font-weight: 320;
     font-style: normal;
     font-variation-settings:
-    "BLED" 10,
-    "SCAN" -20;
-    font-size: 1rem;
+        "BLED" 10,
+        "SCAN" -20;
+    font-size: 1.5rem;
     padding: 5px 0;
     overflow: hidden;
     z-index: 1000;
@@ -116,17 +118,46 @@ body {
 }
 
 #ticker-content {
-  display: inline-block;
-  white-space: nowrap;
-  padding-left: 100%;
-  animation: ticker-scroll 120s linear infinite;
+    display: inline-block;
+    white-space: nowrap;
+    padding-left: 100%;
+    animation: ticker-scroll 200s linear infinite;
 }
 
+
+/* Alert Ticker */
+#alert-ticker-bar {
+    width: 100%;
+    background-color: #db3327;
+    color: #240707;
+    font-family: "Workbench", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+        "BLED" 10,
+        "SCAN" -20;
+    font-size: 2rem;
+    padding: 5px 0;
+    overflow: hidden;
+    z-index: 1000;
+    border-top: 1.5px solid #000000;
+    border-bottom: 3px solid #000000;
+}
+
+#alert-ticker-content {
+    display: inline-block;
+    white-space: nowrap;
+    padding-left: 100%;
+    animation: ticker-scroll 40s linear infinite;
+}
+
+/* Keyframes */
 @keyframes ticker-scroll {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
 }

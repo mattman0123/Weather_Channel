@@ -3,32 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <title>Vinck.Cloud Weather Network</title>
+
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Scripts -->
     <script src="script.js" defer></script>
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Workbench:SCAN@-35&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Header Section -->
     <div class="header">
         <div class="logo">VINCK.CLOUD WEATHER</div>
         <div class="Location">CURRENT LOCATION: WINNIPEG</div>
         <div class="datetime" id="datetime">LOADING...</div>
     </div>
+    <!-- Scrolling ALERT Ticker -->
+    <div id="alert-ticker-bar">
+        <div id="alert-ticker-content"></div>
+    </div>
+
+    <!-- Main Weather Content -->
     <div class="content" id="weather-box">
         <p>LOADING DATA...</p>
     </div>
+
+    <!-- Scrolling AQHI Ticker -->
     <div id="ticker-bar">
         <div id="ticker-content"></div>
     </div>
-
-    <div class="footer">
+</body>
+<footer>
+        <div class="footer">
         <span>© <span id="year"></span> Vinck.Cloud Weather | </span>
         <a href="https://github.com/mattman0123/Weather_Channel" target="_blank">GitHub</a>
         <span> | </span>
         <a href="https://www.brewingbytesandbeans.com" target="_blank">BrewingBytesAndBeans.com</a>
         <span> | Broadcast Powered by Python</span>
-
     </div>
-</body>
+</footer>
 </html>
