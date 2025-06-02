@@ -26,7 +26,7 @@ Weather_Channel/
 └── .gitignore               # Specifies files to ignore in the repository
 ```
 ## Demo
-    https://weather.vinck.cloud
+   https://weather.vinck.cloud
 
 ## Getting Started
 
