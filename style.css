@@ -63,7 +63,7 @@ body {
     padding: 10px;
     font-size: 45px;
     line-height: 1.6;
-    min-height: 80%;
+    min-height: 78%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -121,13 +121,14 @@ body {
     display: inline-block;
     white-space: nowrap;
     padding-left: 100%;
-    animation: ticker-scroll 200s linear infinite;
+    animation: ticker-scroll 100s linear infinite;
 }
 
 
 /* Alert Ticker */
 #alert-ticker-bar {
     width: 100%;
+    max-height:40px;
     background-color: #db3327;
     color: #240707;
     font-family: "Workbench", sans-serif;
@@ -149,7 +150,7 @@ body {
     display: inline-block;
     white-space: nowrap;
     padding-left: 100%;
-    animation: ticker-scroll 40s linear infinite;
+    animation: ticker-scroll 2000s linear infinite;
 }
 
 /* Keyframes */

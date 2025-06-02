@@ -128,12 +128,17 @@ def fetch_weatherapi_data():
     # WeatherAPI alerts
     alerts = data.get("alerts", {}).get("alert", [])
     alert_slides = []
+
     for alert in alerts:
+        headline = alert.get('headline', 'No headline').replace('\n', ' ').replace('\r', ' ').strip()
+        desc = alert.get('desc', 'No description').replace('\n', ' ').replace('\r', ' ').strip()
+        instruction = alert.get('instruction', 'No instructions').replace('\n', ' ').replace('\r', ' ').strip()
+
         alert_slides.append(
-            f"⚠️ WEATHER ALERT ⚠️\n"
-            f"{alert.get('headline', 'No headline')}\n"
-            f"{alert.get('desc', '')[:200]}..."  # Truncate long descriptions
+            f"⚠️ WEATHER ALERT ⚠️ {headline} --- {desc} --- {instruction}..."
         )
+
+
 
     return slides, alert_slides
 
