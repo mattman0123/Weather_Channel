@@ -1,50 +1,50 @@
 {
   "AAPL": {
     "name": "Apple Inc.",
-    "price": 200.69,
-    "change": -0.16,
-    "percent": -0.08
+    "price": 200.84,
+    "change": -0.01,
+    "percent": -0.0
   },
   "MSFT": {
     "name": "Microsoft Corporation",
-    "price": 460.76,
-    "change": 0.4,
-    "percent": 0.09
+    "price": 460.72,
+    "change": 0.36,
+    "percent": 0.08
   },
   "NVDA": {
     "name": "NVIDIA Corporation",
-    "price": 137.68,
-    "change": 2.55,
-    "percent": 1.89
+    "price": 137.62,
+    "change": 2.49,
+    "percent": 1.84
   },
   "GOOGL": {
     "name": "Alphabet Inc.",
-    "price": 169.02,
-    "change": -2.72,
-    "percent": -1.58
+    "price": 168.55,
+    "change": -3.19,
+    "percent": -1.86
   },
   "DE": {
     "name": "Deere & Company",
-    "price": 505.54,
-    "change": -0.7,
-    "percent": -0.14
+    "price": 506.21,
+    "change": -0.03,
+    "percent": -0.01
   },
   "ADM": {
     "name": "Archer-Daniels-Midland Company",
-    "price": 47.84,
-    "change": -0.43,
-    "percent": -0.89
+    "price": 47.92,
+    "change": -0.35,
+    "percent": -0.73
   },
   "BG": {
     "name": "Bunge Limited",
-    "price": 78.2,
-    "change": 0.03,
-    "percent": 0.04
+    "price": 78.26,
+    "change": 0.09,
+    "percent": 0.12
   },
   "CF": {
     "name": "CF Industries Holdings, Inc.",
-    "price": 92.68,
-    "change": 2.0,
-    "percent": 2.21
+    "price": 92.8,
+    "change": 2.12,
+    "percent": 2.34
   }
 }
