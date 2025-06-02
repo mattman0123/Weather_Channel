@@ -1,4 +1,9 @@
-.env
+#alert files auto generated
 news.json
 stocks.json
 weather.json
+aqhi_alerts.json
+alerts.json
+
+#Private files
+.env
