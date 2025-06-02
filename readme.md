@@ -25,6 +25,8 @@ Weather_Channel/
 ├── weather.json             # Weather data
 └── .gitignore               # Specifies files to ignore in the repository
 ```
+##Demo
+    https://weather.vinck.cloud
 
 ## Getting Started
 
