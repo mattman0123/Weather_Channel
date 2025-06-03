@@ -1,17 +1,33 @@
 /* Base HTML & Body */
-html {
+html, body {
     margin: 0;
+    padding: 0;
     height: 100%;
     width: 100%;
-}
-
-body {
-    margin: 0;
     background: black;
     color: white;
-    font-family: "Courier New", Courier, monospace;
+    font-family: "Workbench", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 320;
+    font-style: normal;
+    font-variation-settings: "BLED" 10, "SCAN" -20;
     text-transform: uppercase;
-    height: 100%;
+}
+
+/* Layout Container */
+#page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Shared Workbench Font Settings */
+.workbench {
+    font-family: "Workbench", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 320;
+    font-style: normal;
+    font-variation-settings: "BLED" 10, "SCAN" -20;
 }
 
 /* Header */
@@ -23,13 +39,7 @@ body {
     align-items: center;
     padding: 10px 20px;
     font-size: 30px;
-    font-family: "Workbench", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 300;
-    font-style: normal;
-    font-variation-settings:
-        "BLED" 15,
-        "SCAN" -20;
+    font-variation-settings: "BLED" 15, "SCAN" -20;
 }
 
 .logo {
@@ -37,23 +47,7 @@ body {
 }
 
 .datetime {
-    text-align: right;
     font-size: 25px;
-    font-family: "Workbench", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 300;
-    font-style: normal;
-    font-variation-settings:
-        "BLED" 10,
-        "SCAN" -20;
-}
-
-/* Alerts */
-.alert {
-    color: yellow;
-    background: red;
-    font-weight: bold;
-    animation: blink 1s infinite;
 }
 
 /* Main Content */
@@ -63,29 +57,75 @@ body {
     padding: 10px;
     font-size: 45px;
     line-height: 1.6;
-    min-height: 78%;
+    flex: 1 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     white-space: pre-wrap;
+}
+
+/* Alert Styling */
+.alert {
+    color: yellow;
+    background: red;
+    font-weight: bold;
+    animation: blink 1s infinite;
+}
+
+/* Ticker Bars */
+#ticker-bar,
+#alert-ticker-bar {
+    width: 100%;
+    overflow: hidden;
+    font-size: 1.5rem;
+    padding: 5px 0;
+    z-index: 1000;
     font-family: "Workbench", sans-serif;
     font-optical-sizing: auto;
     font-weight: 320;
     font-style: normal;
-    font-variation-settings:
-        "BLED" 10,
-        "SCAN" -20;
+    font-variation-settings: "BLED" 10, "SCAN" -20;
+}
+
+#ticker-bar {
+    background-color: #000033;
+    color: #fff;
+    border-top: 2px solid #00BFFF;
+}
+
+#alert-ticker-bar {
+    max-height: 40px;
+    background-color: #db3327;
+    color: #240707;
+    font-size: 2rem;
+    border-top: 1.5px solid #000;
+    border-bottom: 3px solid #000;
+}
+
+/* Ticker Content Animation */
+#ticker-content,
+#alert-ticker-content {
+    display: inline-block;
+    white-space: nowrap;
+    padding-left: 100%;
+}
+
+#ticker-content {
+    animation: ticker-scroll 100s linear infinite;
+}
+
+#alert-ticker-content {
+    animation: ticker-scroll 2000s linear infinite;
 }
 
 /* Footer */
 .footer {
-    background: #cccccc;
+    background: #ccc;
     color: #000;
     text-align: center;
     padding: 10px 0;
     font-size: 16px;
-    font-family: "Courier New", Courier, monospace;
     width: 100%;
 }
 
@@ -98,67 +138,8 @@ body {
     text-decoration: underline;
 }
 
-/* Ticker */
-#ticker-bar {
-    width: 100%;
-    background-color: #000033;
-    color: #fff;
-    font-family: "Workbench", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 320;
-    font-style: normal;
-    font-variation-settings:
-        "BLED" 10,
-        "SCAN" -20;
-    font-size: 1.5rem;
-    padding: 5px 0;
-    overflow: hidden;
-    z-index: 1000;
-    border-top: 2px solid #00BFFF;
-}
-
-#ticker-content {
-    display: inline-block;
-    white-space: nowrap;
-    padding-left: 100%;
-    animation: ticker-scroll 100s linear infinite;
-}
-
-
-/* Alert Ticker */
-#alert-ticker-bar {
-    width: 100%;
-    max-height:40px;
-    background-color: #db3327;
-    color: #240707;
-    font-family: "Workbench", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-    font-variation-settings:
-        "BLED" 10,
-        "SCAN" -20;
-    font-size: 2rem;
-    padding: 5px 0;
-    overflow: hidden;
-    z-index: 1000;
-    border-top: 1.5px solid #000000;
-    border-bottom: 3px solid #000000;
-}
-
-#alert-ticker-content {
-    display: inline-block;
-    white-space: nowrap;
-    padding-left: 100%;
-    animation: ticker-scroll 2000s linear infinite;
-}
-
-/* Keyframes */
+/* Ticker Animation */
 @keyframes ticker-scroll {
-    0% {
-        transform: translateX(0%);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-100%); }
 }

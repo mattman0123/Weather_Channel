@@ -72,7 +72,7 @@ def strip_tags(html):
 
 def fetch_weatherapi_data():
     print(f"[{datetime.now()}] Fetching weather data from WeatherAPI...")
-    url = f"http://api.weatherapi.com/v1/forecast.json?key={API_KEY}&q={LOCATION}&days=5&aqi=yes&alerts=yes"
+    url = f"http://api.weatherapi.com/v1/forecast.json?key={API_KEY}&q={LOCATION}&days=5&aqi=yes&alerts=yes&lang=en"
     res = requests.get(url)
     data = res.json()
 
@@ -137,8 +137,6 @@ def fetch_weatherapi_data():
         alert_slides.append(
             f"⚠️ WEATHER ALERT ⚠️ {headline} --- {desc} --- {instruction}..."
         )
-
-
 
     return slides, alert_slides
 
