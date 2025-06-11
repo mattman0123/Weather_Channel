@@ -147,6 +147,33 @@ function updateDateTime() {
     document.getElementById("datetime").textContent = dateTimeStr;
 }
 
+(async function loadTrackerIfExists() {
+    try {
+        const res = await fetch('tracking.html');
+        if (!res.ok) {
+            console.log('📭 tracking.html not found. Skipping analytics.');
+            return;
+        }
+        const html = await res.text();
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = html;
+        const scriptTag = tempDiv.querySelector('script');
+        if (scriptTag) {
+            const newScript = document.createElement('script');
+            newScript.src = scriptTag.src;
+            newScript.defer = true;
+            for (const attr of scriptTag.attributes) {
+                if (attr.name !== "src") {
+                    newScript.setAttribute(attr.name, attr.value);
+                }
+            }
+            document.head.appendChild(newScript);
+            console.log('✅ Tracker loaded successfully.');
+        }
+    } catch (err) {
+        console.error('⚠️ Failed to load tracker:', err);
+    }
+})();
 
 window.addEventListener('DOMContentLoaded', loadAlertTicker);
 window.addEventListener('DOMContentLoaded', loadAQHITicker);
