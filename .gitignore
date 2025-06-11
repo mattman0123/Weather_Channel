@@ -8,4 +8,4 @@ alerts.json
 #Private files
 .env
 tracking.html
-/docker/*
+/docker/.env

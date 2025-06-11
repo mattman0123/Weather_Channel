@@ -1,0 +1,17 @@
+FROM python:3.11-slim
+
+# Install git and other essentials
+RUN apt-get update && apt-get install -y git curl && rm -rf /var/lib/apt/lists/*
+RUN pip install --no-cache-dir requests feedparser yfinance beautifulsoup4 python-dotenv lxml
+
+# Set environment variables
+ENV REPO_URL=https://github.com/mattman0123/Weather_Channel
+ENV WORKDIR=/app
+
+# Set working directory
+WORKDIR $WORKDIR
+
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
+

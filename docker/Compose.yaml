@@ -1,0 +1,21 @@
+version: '3.9'
+
+services:
+  weather-channel:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: weather_channel
+    environment:
+      API_KEY: ${API_KEY}  # Loaded from .env or passed manually
+      TRACKING_KEY: ${TRACKING_KEY}
+      REPO_URL: https://github.com/mattman0123/Weather_Channel
+      WORKDIR: /app
+    ports:
+      - "8000:8000"
+    volumes:
+      - weather_data:/app/data  # changed to avoid overwriting /app/website
+    restart: unless-stopped
+
+volumes:
+  weather_data:
